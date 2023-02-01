@@ -1,0 +1,38 @@
+create database My_FBoard;
+
+
+use My_FBoard;
+
+CREATE TABLE Board (
+		B_NO INT PRIMARY KEY AUTO_INCREMENT, 
+        B_TITLE CHAR(200) NOT NULL DEFAULT "",			#글제목
+	    B_ID CHAR(90) NOT NULL,							#작성자ID
+		B_DATETIME DATETIME NOT NULL DEFAULT now(),		#작성시간
+	    B_TEXT TEXT	NOT NULL							#글내용, 댓글내용
+	);
+    
+    drop table Board;
+    
+    -- delete from %s where B_TITLE='%s';-- 
+
+	select * from Board;
+    
+    insert into Board (B_TITLE,B_ID,B_DATETIME,B_TEXT) values
+    (
+    '이걸바꾸세요'
+    ,
+    '임설준'
+    ,
+    now()
+    ,
+    'asdasd'
+    );
+    
+    
+    select * from Board;
+    select * from Board limit 0,3;
+insert into Board (B_TITLE,B_ID,B_DATETIME,B_HIT,B_TEXT) values ('null','ㅁ',now(),'null');
+delete from Board where B_NO=1;
+select * from Board where B_TITLE like '%zz%' limit 0,3;
+select count(*) from Board;    
+    
